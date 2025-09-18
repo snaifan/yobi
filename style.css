@@ -765,8 +765,6 @@ a:hover {
 }
 
 /* --- Final CTA Section --- */
-.final-cta h2{
-    color: #fff;}
 .final-cta {
     background-color: var(--primary-color);
     color: #fff;
