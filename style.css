@@ -942,7 +942,7 @@ a:hover {
         padding: 100px 15px 80px;
     }
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     .hero h2 {
         font-size: 1.2rem;
@@ -1112,7 +1112,6 @@ a:hover {
         font-size: 0.95rem;
     }
 }
-
 .thought-of-day {
     text-align: center;
     margin: 40px 0; /* space juu na chini */
