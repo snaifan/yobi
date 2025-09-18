@@ -1112,3 +1112,14 @@ a:hover {
         font-size: 0.95rem;
     }
 }
+.thought-of-day {
+    text-align: center;
+    margin: 40px 0; /* space juu na chini */
+}
+
+.thought-of-day .thought-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px; /* optional, kama unataka kona ziwe laini */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* kidogo shadow ya kuifanya elegant */
+}
