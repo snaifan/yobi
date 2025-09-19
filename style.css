@@ -131,13 +131,13 @@ a:hover {
 .main-nav .nav-list {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 20px;
 }
 
 .main-nav .nav-list a {
     color: var(--text-color);
     font-weight: 500;
-    padding: 5px 0;
+    padding: 3.5px 0;
     position: relative;
 }
 
@@ -166,7 +166,7 @@ a:hover {
     display: none; /* Hidden by default on desktop */
     background: none;
     border: none;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: var(--primary-color);
     cursor: pointer;
 }
@@ -840,13 +840,13 @@ a:hover {
     h3 { font-size: 1.4rem; }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
     .hero h2 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .page-hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .page-hero p {
         font-size: 1rem;
@@ -891,7 +891,7 @@ a:hover {
         display: block; /* Make the hamburger icon visible */
         /* No need for absolute positioning here, it flows naturally with flexbox */
         cursor: pointer;
-        font-size: 1.5rem; /* Ensure toggle is a good size */
+        font-size: 1.2rem; /* Ensure toggle is a good size */
         color: var(--primary-dark);
     }
 
@@ -904,8 +904,8 @@ a:hover {
         position: absolute; /* Position relative to the .main-header */
         top: 100%; /* Position directly below the main-header */
         left: 0;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow below header */
-        padding: 20px 0; /* Vertical padding for links */
+        box-shadow: 0 3.5px 10px rgba(0,0,0,0.1); /* Subtle shadow below header */
+        padding: 18px 0; /* Vertical padding for links */
         border-top: 1px solid var(--background-dark); /* Subtle separator below header */
         z-index: 999; /* Ensure menu is above page content */
         overflow-y: auto; /* Enable scrolling if menu is very long */
@@ -922,7 +922,7 @@ a:hover {
 
     .nav-list li a {
         display: block; /* Make the entire link area clickable */
-        padding: 15px 20px; /* Ample padding for touch targets */
+        padding: 12px 17px; /* Ample padding for touch targets */
         text-align: center;
         width: 100%; /* Ensure link takes full width of dropdown */
         border-bottom: 1px solid var(--background-light); /* Separator between links */

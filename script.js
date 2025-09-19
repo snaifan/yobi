@@ -88,6 +88,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Footer elements (fade in)
     ScrollReveal().reveal('.footer-nav, .social-icons, .footer p', { origin: 'bottom', delay: 50, interval: 50 });
+    
+      ScrollReveal().reveal('.thought-of-day', {
+    delay: 200,
+    distance: '30px',
+    origin: 'bottom',
+    duration: 800
+  });
+
+  ScrollReveal().reveal('.youtube-showcase', {
+    delay: 200,
+    distance: '30px',
+    origin: 'bottom',
+    duration: 900
+  });
+
 });
 //contact form
 const form = document.getElementById("subscribe-form");
@@ -114,3 +129,4 @@ const form = document.getElementById("subscribe-form");
                 }
             });
         });
+
