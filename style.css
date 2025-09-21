@@ -362,6 +362,11 @@ a:hover {
     color: var(--text-color);
 }
 
+.solution-text:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    background-color: #fdf0f0; /* Subtle tomato-red tint */
+}
 .solution-text h3, .solution-text p {
     color: var(--text-color); /* Darker for readability */
 }
@@ -514,56 +519,102 @@ a:hover {
 
 /* --- About Page Specific --- */
 .about-content {
-    background-color: #fff;
-    padding: 80px 20px;
+    padding: 4rem 1.25rem; /* Matches .section-padding */
+    background-color: var(--background-light); /* #f8f9fa */
 }
 
-.about-flex-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 50px;
-    align-items: center;
-    justify-content: center;
+.about-content .container {
     max-width: 1000px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
 }
 
 .about-image {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
-}
-
-.about-image img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
 }
 
 .about-text {
-    flex: 2;
+    flex: 1;
     min-width: 300px;
     text-align: left;
 }
 
 .about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    font-family: var(--font-serif); /* Poppins */
+    color: var(--primary-color); /* #1A1A1A */
+    margin-bottom: 1rem;
 }
 
 .about-text h3 {
     font-size: 1.6rem;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    font-family: var(--font-serif);
+    color: var(--primary-color);
+    margin: 1.5rem 0 1rem;
 }
 
 .about-text p {
-    color: var(--text-color);
     font-size: 1.05rem;
+    font-family: var(--font-sans); /* Source Sans Pro */
+    color: var(--text-color); /* #333333 */
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
+.about-text .btn-primary {
+    background-color: #d32f2f; /* Tomato red */
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    border-radius: 8px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-text .btn-primary:hover {
+    background-color: #b71c1c; /* Darker red */
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .about-content .container {
+        flex-direction: row;
+    }
+    .about-image {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-text h2 {
+        font-size: 1.8rem;
+    }
+    .about-text h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        padding: 3rem 0.9375rem; /* 48px 15px */
+    }
+    .about-content .container {
+        flex-direction: column;
+    }
+    .about-image {
+        max-width: 100%;
+    }
+}
 /* --- Offerings Full Page Specific --- */
 .offerings-full {
     background-color: var(--background-dark);

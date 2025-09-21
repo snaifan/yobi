@@ -180,6 +180,7 @@ const form = document.getElementById("subscribe-form");
     }
 });
 
+// Dynamic Footer Year
 document.querySelector('.footer p').innerHTML = `&copy; ${new Date().getFullYear()} AT Fields. All Rights Reserved.`;
 
 document.querySelectorAll('.cta-buttons .btn').forEach(button => {
@@ -235,3 +236,19 @@ document.querySelectorAll('.read-more').forEach(link => {
     link.addEventListener('click', () => console.log(`Blog post clicked: ${link.textContent}`));
 });
 
+
+
+
+// Analytics for CTAs
+document.querySelectorAll('.btn-primary').forEach(btn => {
+    btn.addEventListener('click', () => console.log(`Primary CTA clicked: ${btn.textContent}`));
+});
+document.querySelectorAll('.read-more').forEach(link => {
+    link.addEventListener('click', () => console.log(`Read More clicked: ${link.getAttribute('href')}`));
+});
+document.querySelectorAll('.back-to-blog-btn').forEach(btn => {
+    btn.addEventListener('click', () => console.log('Back to Blog clicked'));
+});
+document.querySelectorAll('.social-icons a').forEach(icon => {
+    icon.addEventListener('click', () => console.log(`Social icon clicked: ${icon.getAttribute('aria-label')}`));
+});
