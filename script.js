@@ -121,12 +121,7 @@ ScrollReveal().reveal('.cta-image', { origin: 'bottom', delay: 400, duration: 10
 
 });
 
-// Problem and Solution Animations
-ScrollReveal().reveal('.problem-solution h2', { origin: 'top', delay: 100, duration: 1000, opacity: 0 });
-ScrollReveal().reveal('.problem-solution .section-intro', { origin: 'top', delay: 200, duration: 1000, opacity: 0 });
-ScrollReveal().reveal('.problem-solution-image', { origin: 'bottom', delay: 300, duration: 1000, opacity: 0 });
-ScrollReveal().reveal('.problem-text', { origin: 'left', delay: 400, duration: 1000, opacity: 0 });
-ScrollReveal().reveal('.solution-text', { origin: 'right', delay: 500, duration: 1000, opacity: 0 });
+
 //contact form
 const form = document.getElementById("subscribe-form");
         const message = document.getElementById("form-message");
