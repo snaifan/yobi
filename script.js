@@ -59,6 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.remove('active');
         }
     });
+    
+    document.addEventListener('DOMContentLoaded', () => {
+    const videos = [
+        { id: 'd5RjxPesLcU', title: 'Tomato Growth Journey', desc: 'Watch my tomato plants thrive and learn patience in growth.' },
+        { id: 'VIDEO_ID_2', title: 'Harvesting Tips', desc: 'Practical techniques from my farm to boost your yield and mindset.' },
+        { id: 'VIDEO_ID_3', title: 'Growth Mindset Lessons', desc: 'Farm-inspired strategies to nurture your personal and professional growth.' }
+    ];
+    const videoGrid = document.querySelector('.video-grid');
+    videos.forEach(video => {
+        videoGrid.innerHTML += `
+            <div class="video-card">
+                <iframe src="https://www.youtube.com/embed/${video.id}" title="${video.title}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                <h3>${video.title}</h3>
+                <p>${video.desc}</p>
+            </div>
+        `;
+    });
+    // Existing ScrollReveal and other code...
+});
 
     // --- ScrollReveal Animations ---
     // Initialize ScrollReveal with custom defaults
@@ -89,21 +108,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Footer elements (fade in)
     ScrollReveal().reveal('.footer-nav, .social-icons, .footer p', { origin: 'bottom', delay: 50, interval: 50 });
     
-      ScrollReveal().reveal('.thought-of-day', {
-    delay: 200,
-    distance: '30px',
-    origin: 'bottom',
-    duration: 800
-  });
+    ScrollReveal().reveal('.thought-image', { delay: 300, duration: 1000, opacity: 0, easing: 'ease-in-out' });
+    
+    ScrollReveal().reveal('.video-card', { delay: 200, duration: 1000, opacity: 0, distance: '20px', origin: 'bottom', interval: 200 });
 
-  ScrollReveal().reveal('.youtube-showcase', {
-    delay: 200,
-    distance: '30px',
-    origin: 'bottom',
-    duration: 900
-  });
+    ScrollReveal().reveal('.hero-background-image', { delay: 200, duration: 1000, opacity: 0, easing: 'ease-in-out' });
+    // Final CTA Animations
+ScrollReveal().reveal('.final-cta h2', { origin: 'top', delay: 100, duration: 1000, opacity: 0 });
+ScrollReveal().reveal('.final-cta p', { origin: 'top', delay: 200, duration: 1000, opacity: 0 });
+ScrollReveal().reveal('.cta-buttons', { origin: 'bottom', delay: 300, duration: 1000, opacity: 0 });
+ScrollReveal().reveal('.cta-image', { origin: 'bottom', delay: 400, duration: 1000, opacity: 0 });
 
 });
+
+// Problem and Solution Animations
+ScrollReveal().reveal('.problem-solution h2', { origin: 'top', delay: 100, duration: 1000, opacity: 0 });
+ScrollReveal().reveal('.problem-solution .section-intro', { origin: 'top', delay: 200, duration: 1000, opacity: 0 });
+ScrollReveal().reveal('.problem-solution-image', { origin: 'bottom', delay: 300, duration: 1000, opacity: 0 });
+ScrollReveal().reveal('.problem-text', { origin: 'left', delay: 400, duration: 1000, opacity: 0 });
+ScrollReveal().reveal('.solution-text', { origin: 'right', delay: 500, duration: 1000, opacity: 0 });
 //contact form
 const form = document.getElementById("subscribe-form");
         const message = document.getElementById("form-message");
@@ -129,4 +152,75 @@ const form = document.getElementById("subscribe-form");
                 }
             });
         });
+        
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'your-id');
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('subscribe-form');
+    const message = document.getElementById('form-message');
+    if (form && message) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    message.style.display = 'block';
+                    message.textContent = 'Thank you!';
+                    message.style.color = 'green';
+                    form.reset();
+                } else {
+                    message.style.display = 'block';
+                    message.textContent = 'Oops! Something went wrong.';
+                    message.style.color = 'red';
+                }
+            });
+        });
+    }
+});
 
+document.querySelector('.footer p').innerHTML = `&copy; ${new Date().getFullYear()} AT Fields. All Rights Reserved.`;
+
+document.querySelectorAll('.cta-buttons .btn').forEach(button => {
+    button.addEventListener('click', () => {
+        console.log(`CTA clicked: ${button.textContent}`);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Dynamic Copyright Year
+    document.querySelector('#year').textContent = new Date().getFullYear();
+
+    // Offerings Preview Animations (Homepage)
+    ScrollReveal().reveal('.product-card', { origin: 'bottom', delay: 200, duration: 1000, opacity: 0, interval: 200 });
+    ScrollReveal().reveal('.center-btn-wrapper', { origin: 'bottom', delay: 400, duration: 1000, opacity: 0 });
+
+    // Offerings Full Animations (offerings.html)
+    ScrollReveal().reveal('.offerings-card', { origin: 'bottom', delay: 200, duration: 1000, opacity: 0, interval: 200 });
+});
+
+const offerings = [
+    { id: 'blueprint', title: 'The Rooted Growth Blueprint', desc: '...', price: '$149', img: 'images/The Rooted Growth Blueprint.jpg', alt: 'The Rooted Growth Blueprint' },
+    // Add more
+];
+const grid = document.querySelector('.offerings-grid');
+if (grid) {
+    offerings.forEach(o => {
+        grid.innerHTML += `<div class="offerings-card" id="${o.id}">...</div>`;
+    });
+}
+
+document.querySelectorAll('.offerings-card .btn').forEach(button => {
+    button.addEventListener('click', () => console.log(`Offering clicked: ${button.textContent}`));
+});
+
+const solutionCTA = document.querySelector('.solution-text .btn');
+if (solutionCTA) {
+    solutionCTA.addEventListener('click', () => console.log('Problem-Solution CTA clicked'));
+}
