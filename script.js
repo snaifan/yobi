@@ -219,3 +219,19 @@ const solutionCTA = document.querySelector('.solution-text .btn');
 if (solutionCTA) {
     solutionCTA.addEventListener('click', () => console.log('Problem-Solution CTA clicked'));
 }
+
+const posts = [
+    { title: 'Why Small Beginnings Matter', date: 'June 15, 2025', tags: 'Starting Small', excerpt: 'Every great story...', img: 'images/small-beginnings.jpg', url: 'posts/why-small-beginnings-matter.html' },
+    // Add more
+];
+const blogGrid = document.querySelector('.blog-grid');
+if (blogGrid) {
+    posts.forEach(post => {
+        blogGrid.innerHTML += `<article class="blog-card">...</article>`;
+    });
+}
+
+document.querySelectorAll('.read-more').forEach(link => {
+    link.addEventListener('click', () => console.log(`Blog post clicked: ${link.textContent}`));
+});
+
