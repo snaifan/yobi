@@ -252,3 +252,8 @@ document.querySelectorAll('.back-to-blog-btn').forEach(btn => {
 document.querySelectorAll('.social-icons a').forEach(icon => {
     icon.addEventListener('click', () => console.log(`Social icon clicked: ${icon.getAttribute('aria-label')}`));
 });
+
+// Tomato Tips Animations
+ScrollReveal().reveal('.tomato-tips h2', { origin: 'top', delay: 100, duration: 1000, opacity: 0 });
+ScrollReveal().reveal('.tomato-tips .section-intro', { origin: 'top', delay: 200, duration: 1000, opacity: 0 });
+ScrollReveal().reveal('.tip-card', { origin: 'bottom', delay: 300, duration: 1000, opacity: 0, interval: 200 });
