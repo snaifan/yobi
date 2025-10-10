@@ -1,5 +1,8 @@
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
+    // Debug: Log when DOM is ready
+    console.log('DOM fully loaded');
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -18,9 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navList = document.querySelector('.nav-list');
 
     if (menuToggle && navList) {
+        console.log('Menu elements found:', { menuToggle, navList }); // Debug element detection
         menuToggle.addEventListener('click', () => {
             navList.classList.toggle('active');
-            console.log('Toggled menu, active:', navList.classList.contains('active')); // Debug
+            console.log('Toggled menu, active:', navList.classList.contains('active')); // Debug toggle state
         });
 
         // Close menu when a link is clicked
@@ -31,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     } else {
-        console.log('Menu toggle or nav list not found'); // Debug if elements are missing
+        console.log('Menu elements not found:', { menuToggle, navList }); // Debug if missing
     }
 
     // Highlight active navigation link based on current page
@@ -134,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 message.style.color = 'red';
                 console.error('Fetch error:', error);
             });
-        });
     }
 
     // Dynamic Footer Year
@@ -152,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Offerings and blog dynamic content
     const offerings = [
-        { id: 'blueprint', title: 'The Rooted Growth Blueprint', desc: '...', price: '$149', img: 'images/The Rooted Growth Blueprint.jpg', alt: 'The Rooted Growth Blueprint' }
+        { id: 'blueprint', title: 'The Rooted Growth Blueprint', desc: 'A guide to strategic deceleration...', price: '$149', img: 'images/The Rooted Growth Blueprint.jpg', alt: 'The Rooted Growth Blueprint' }
         // Add more offerings as needed
     ];
     const grid = document.querySelector('.offerings-grid');
