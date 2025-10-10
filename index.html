@@ -245,23 +245,5 @@
     <script src="https://unpkg.com/ScrollReveal"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=your-id"></script>
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navList = document.querySelector('.nav-list');
-
-            if (menuToggle && navList) {
-                menuToggle.addEventListener('click', function () {
-                    navList.classList.toggle('active');
-                });
-
-                navList.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', function () {
-                        navList.classList.remove('active');
-                    });
-                });
-            }
-        });
-    </script>
 </body>
 </html>
