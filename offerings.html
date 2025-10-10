@@ -261,18 +261,18 @@
             });
 
             // Offerings and blog dynamic content
-            const offerings = [
-                { id: 'blueprint', title: 'The Rooted Growth Blueprint', desc: 'A guide to strategic deceleration...', price: '$149', img: 'images/The Rooted Growth Blueprint.jpg', alt: 'The Rooted Growth Blueprint' }
-            ];
-            const grid = document.querySelector('.offerings-grid');
-            if (grid) {
-                offerings.forEach(o => {
-                    grid.innerHTML += `<div class="offerings-card" id="${o.id}"><img src="${o.img}" alt="${o.alt}" loading="lazy"><h3>${o.title}</h3><p>${o.desc}</p><div class="card-actions"><span class="price">${o.price}</span><a href="#" class="btn btn-small">Buy Now</a></div></div>`;
-                });
-                document.querySelectorAll('.offerings-card .btn').forEach(button => {
-                    button.addEventListener('click', () => console.log(`Offering clicked: ${button.textContent}`));
-                });
-            }
+           // const offerings = [
+               // { id: 'blueprint', title: 'The Rooted Growth Blueprint', desc: 'A guide to strategic deceleration...', price: '$149', img: 'images/The Rooted Growth Blueprint.jpg', alt: 'The Rooted Growth Blueprint' }
+           // ];
+         //   const grid = document.querySelector('.offerings-grid');
+         //   if (grid) {
+        //       offerings.forEach(o => {
+             //       grid.innerHTML += `<div class="offerings-card" id="${o.id}"><img src="${o.img}" alt="${o.alt}" loading="lazy"><h3>${o.title}</h3><p>${o.desc}</p><div class="card-actions"><span class="price">${o.price}</span><a href="#" class="btn btn-small">Buy Now</a></div></div>`;
+         //      });
+         //       document.querySelectorAll('.offerings-card .btn').forEach(button => {
+        //            button.addEventListener('click', () => console.log(`Offering clicked: ${button.textContent}`));
+        //        });
+    //        }
 
             const solutionCTA = document.querySelector('.solution-text .btn');
             if (solutionCTA) {
@@ -280,7 +280,7 @@
             }
 
             const posts = [
-                { title: 'Why Small Beginnings Matter', date: 'June 15, 2025', tags: 'Starting Small', excerpt: 'Every great story...', img: 'images/small-beginnings.jpg', url: 'posts/why-small-beginnings-matter.html' }
+                { title: 'Why Small Beginnings Matter', date: 'June 15, 2025', tags: 'Starting Small', excerpt: 'Every great story...', img: 'images/Small-beginnings.jpg', url: 'posts/why-small-beginnings-matter.html' }
             ];
             const blogGrid = document.querySelector('.blog-grid');
             if (blogGrid) {
