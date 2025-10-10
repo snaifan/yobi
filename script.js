@@ -16,37 +16,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile navigation toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navList = document.querySelector('.nav-list');
+// Menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
 
-    if (menuToggle && navList) {
-        menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
-            // Toggle between hamburger and close icon
-            const icon = menuToggle.querySelector('i');
-            if (navList.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Close nav when a link is clicked (for mobile)
-        navList.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navList.classList.contains('active')) {
-                    navList.classList.remove('active');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+        if (menuToggle && navList) {
+            menuToggle.addEventListener('click', function () {
+                navList.classList.toggle('active');
             });
-        });
-    }
 
+            // Optional: Close menu when a link is clicked (for better UX)
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function () {
+                    navList.classList.remove('active');
+                });
+            });
+        }
+    });
     // Highlight active navigation link based on current page
     const currentPath = window.location.pathname.split('/').pop();
     const navLinks = document.querySelectorAll('.nav-list a');
