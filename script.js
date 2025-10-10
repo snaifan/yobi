@@ -1,3 +1,4 @@
+// Wait for DOM to load
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -17,16 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const navList = document.querySelector('.nav-list');
 
     if (menuToggle && navList) {
-        menuToggle.addEventListener('click', function () {
+        menuToggle.addEventListener('click', () => {
             navList.classList.toggle('active');
-            console.log('Menu toggle clicked, active class:', navList.classList.contains('active')); // Debug
+            console.log('Toggled menu, active:', navList.classList.contains('active')); // Debug
         });
 
         // Close menu when a link is clicked
         navList.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function () {
+            link.addEventListener('click', () => {
                 navList.classList.remove('active');
-                console.log('Nav link clicked, menu closed'); // Debug
+                console.log('Link clicked, menu closed'); // Debug
             });
         });
     } else {
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Dynamic video grid (example)
+    // Dynamic video grid
     const videos = [
         { id: 'd5RjxPesLcU', title: 'Tomato Growth Journey', desc: 'Watch my tomato plants thrive and learn patience in growth.' },
         { id: 'VIDEO_ID_2', title: 'Harvesting Tips', desc: 'Practical techniques from my farm to boost your yield and mindset.' },
@@ -127,12 +128,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     message.textContent = 'Oops! Something went wrong.';
                     message.style.color = 'red';
                 }
+            }).catch(error => {
+                message.style.display = 'block';
+                message.textContent = 'Error: Please try again later.';
+                message.style.color = 'red';
+                console.error('Fetch error:', error);
             });
         });
     }
 
     // Dynamic Footer Year
-    document.querySelector('.footer p').innerHTML = `&copy; ${new Date().getFullYear()} AT Fields. All Rights Reserved.`;
+    const footerText = document.querySelector('.footer p');
+    if (footerText) {
+        footerText.innerHTML = `&copy; ${new Date().getFullYear()} AT Fields. All Rights Reserved.`;
+    }
 
     // CTA button logging
     document.querySelectorAll('.cta-buttons .btn').forEach(button => {
@@ -141,15 +150,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Offerings and blog dynamic content (example)
+    // Offerings and blog dynamic content
     const offerings = [
         { id: 'blueprint', title: 'The Rooted Growth Blueprint', desc: '...', price: '$149', img: 'images/The Rooted Growth Blueprint.jpg', alt: 'The Rooted Growth Blueprint' }
-        // Add more
+        // Add more offerings as needed
     ];
     const grid = document.querySelector('.offerings-grid');
     if (grid) {
         offerings.forEach(o => {
-            grid.innerHTML += `<div class="offerings-card" id="${o.id}">...</div>`;
+            grid.innerHTML += `<div class="offerings-card" id="${o.id}"><img src="${o.img}" alt="${o.alt}" loading="lazy"><h3>${o.title}</h3><p>${o.desc}</p><div class="card-actions"><span class="price">${o.price}</span><a href="#" class="btn btn-small">Buy Now</a></div></div>`;
         });
         document.querySelectorAll('.offerings-card .btn').forEach(button => {
             button.addEventListener('click', () => console.log(`Offering clicked: ${button.textContent}`));
@@ -163,12 +172,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const posts = [
         { title: 'Why Small Beginnings Matter', date: 'June 15, 2025', tags: 'Starting Small', excerpt: 'Every great story...', img: 'images/small-beginnings.jpg', url: 'posts/why-small-beginnings-matter.html' }
-        // Add more
+        // Add more posts as needed
     ];
     const blogGrid = document.querySelector('.blog-grid');
     if (blogGrid) {
         posts.forEach(post => {
-            blogGrid.innerHTML += `<article class="blog-card">...</article>`;
+            blogGrid.innerHTML += `<article class="blog-card"><img src="${post.img}" alt="${post.title}" loading="lazy"><div class="card-content"><h3>${post.title}</h3><p class="post-meta">By Brian Atsinwa | ${post.date} | ${post.tags}</p><p>${post.excerpt}</p><a href="${post.url}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a></div></article>`;
         });
         document.querySelectorAll('.read-more').forEach(link => {
             link.addEventListener('click', () => console.log(`Blog post clicked: ${link.textContent}`));
@@ -183,4 +192,18 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => console.log(`Read More clicked: ${link.getAttribute('href')}`));
     });
     document.querySelectorAll('.back-to-blog-btn').forEach(btn => {
-        btn.addEventListener('click', () => console.log('Back to
+        btn.addEventListener('click', () => console.log('Back to Blog clicked'));
+    });
+    document.querySelectorAll('.social-icons a').forEach(icon => {
+        icon.addEventListener('click', () => console.log(`Social icon clicked: ${icon.getAttribute('aria-label')}`));
+    });
+
+    // Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'your-id');
+});
+
+// Dynamic Copyright Year (alternative placement if needed)
+document.querySelector('#year')?.textContent = new Date().getFullYear();
