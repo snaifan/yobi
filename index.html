@@ -71,6 +71,19 @@
             </div>
         </div>
     </section>
+      <!-- NEW: Community Invitation Section -->
+    <section class="cta-community section-padding">
+        <div class="container">
+            <img src="images/community-garden.jpg" alt="Bright image of a community garden gathering" class="cta-image" loading="lazy">
+            <div class="cta-content">
+                <h2>Join Our Growing Community</h2>
+                <p>Connect with like-minded individuals to share insights and support each other’s journey.</p>
+                <div class="center-btn-wrapper">
+                    <a href="https://yobi.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- 1. Farming Corner -->
     <section class="farming-corner section-padding">
         <div class="container">
@@ -415,6 +428,15 @@ showPopup();
         ScrollReveal().reveal('.testimonials h2', { origin: 'top', delay: 150, opacity: 0 });
         ScrollReveal().reveal('.section-intro', { origin: 'top', delay: 250, opacity: 0 });
         ScrollReveal().reveal('.testimonial-card', { origin: 'bottom', delay: 350, interval: 250, opacity: 0,scale: 0.95, afterReveal: el => el.classList.add('revealed') });
+        ScrollReveal().reveal('.cta-community h2', { origin: 'top', delay: 100 });
+    ScrollReveal().reveal('.cta-community .section-intro', { origin: 'top', delay: 200 });
+    ScrollReveal().reveal('.cta-community .cta-image', { origin: 'bottom', delay: 300 });
+    ScrollReveal().reveal('.cta-community .btn', { origin: 'bottom', delay: 400 });
+
+    // CTA button logging
+    document.querySelectorAll('.cta-blueprint .btn, .cta-community .btn').forEach(button => {
+        button.addEventListener('click', () => console.log(`CTA clicked: ${button.textContent}`));
+    });
         
             // Contact form submission
             const form = document.getElementById('subscribe-form');
