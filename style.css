@@ -6,14 +6,14 @@
 }
 
 :root {
-    --primary-color: #2E4A3F; /* Deep forest green */
-    --secondary-color: #F5F8F2; /* Soft off-white with green tint */
-    --accent-color: #C62828; /* Vibrant tomato red */
-    --text-color: #1F2A2A; /* Dark charcoal */
-    --light-text-color: #5F6A6A; /* Muted gray */
-    --background-light: #FAFCF9; /* Crisp background */
-    --background-dark: #E7ECE7; /* Subtle green-gray */
-    --button-hover-color: #A71D1D; /* Darker tomato red */
+    --primary-color: #2E4A3F; /* Deep forest green (unchanged) */
+    --secondary-color: #F5F0E7; /* Warmer off-white beige for variety */
+    --accent-color: #C62828; /* Vibrant tomato red (unchanged) */
+    --text-color: #1F2A2A; /* Dark charcoal (unchanged) */
+    --light-text-color: #5F6A6A; /* Muted gray (unchanged) */
+    --background-light: #FAFCF9; /* Crisp background (unchanged) */
+    --background-dark: #E0E8D7; /* Softer green-gray for depth */
+    --button-hover-color: #A71D1D; /* Darker tomato red (unchanged) */
     --font-serif: 'Lora', serif; /* Elegant serif for headings */
     --font-sans: 'Inter', sans-serif; /* Clean sans-serif for body */
     --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.06);
@@ -270,10 +270,38 @@ a:hover {
 }
 
 .section-intro {
-    font-size: 1rem;
-    color: var(--light-text-color);
+    font-size: 1.1rem;
+    color: #fff; /* Default to white for dark backgrounds like Testimonials */
+    margin-bottom: 40px;
+    text-align: center;
     max-width: 700px;
-    margin: 0 auto 24px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-style: italic;
+    padding: 10px 20px;
+    border-radius: 5px;
+    backdrop-filter: blur(2px);
+    position: relative;
+    z-index: 1; /* Ensure it stays above other elements */
+}
+
+/* Contextual adjustments for light backgrounds */
+.problem-solution .section-intro,
+.farming-corner .section-intro,
+.trading-mindset .section-intro,
+.writing-reflections .section-intro,
+.values-section .section-intro,
+.contact-form .section-intro,
+.contact-work .section-intro {
+    color: var(--text-color); /* Dark charcoal for light backgrounds */
+    background: rgba(var(--primary-color), 0.2); /* Subtle green tint */
+}
+
+/* Ensure Testimonials keeps its original style */
+.testimonials .section-intro {
+    color: #fff;
+    background: rgba(var(--primary-color), 0.7);
 }
 
 .problem-solution-image {
@@ -714,7 +742,6 @@ a:hover {
         font-size: 0.9rem;
     }
     .nav-list li:last-child a { border-bottom: none; }
-}
     .section-padding { padding: 40px 8px; }
     .hero { min-height: 50vh; padding: 40px 8px; }
     .hero h1 { font-size: 2.2rem; }
@@ -956,21 +983,359 @@ a:hover {
     font-size: 0.95rem;
     margin-bottom: 8px;
 }
+
 /* Specific styling for the About page image */
 .about-image {
     width: 100%;
-    max-width: 600px; /* Limits the maximum width */
-    height: auto; /* Maintains aspect ratio */
+    max-width: 600px;
+    height: auto;
     border-radius: var(--border-radius);
-    margin: 0 auto 24px; /* Centers it and adds spacing below */
-    box-shadow: var(--shadow-light); /* Matches other card shadows */
-    display: block; /* Ensures proper centering */
+    margin: 0 auto 24px;
+    box-shadow: var(--shadow-light);
+    display: block;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .about-image {
-        max-width: 100%; /* Full width on smaller screens */
-        margin-bottom: 16px; /* Reduced spacing on mobile */
+        max-width: 100%;
+        margin-bottom: 16px;
     }
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-left: 5px solid var(--primary-color);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: var(--light-text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--primary-color);
+}
+
+.popup-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.cta-btn {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: var(--button-hover-color);
+}
+
+.dont-show-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+.dont-show-label input {
+    margin-right: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 20px;
+        max-width: 85%;
+    }
+    .popup-content h3 {
+        font-size: 1.3rem;
+    }
+    .popup-content p {
+        font-size: 0.9rem;
+    }
+}
+
+.weather-widget {
+    background: var(--background-dark);
+    padding: 20px 0;
+}
+
+#weather-display {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    #weather-display { font-size: 1rem; }
+}
+
+.testimonials {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/farm-background.jpg') no-repeat center center/cover;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, rgba(138, 154, 91, 0.8), var(--primary-color));
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-style: italic;
+    background: rgba(var(--primary-color), 0.7);
+    padding: 10px 20px;
+    border-radius: 5px;
+    backdrop-filter: blur(2px);
+}
+
+.testimonial-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1;
+    max-width: 350px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-left: 5px solid rgba(var(--primary-color), 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(var(--primary-color), 0.3);
+}
+
+.testimonial-card p {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.testimonial-card span {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+@media (max-width: 768px) {
+    .testimonial-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .testimonial-card {
+        margin: 0 10px;
+        max-width: 100%;
+    }
+    .section-intro {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+    .testimonials {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.testimonial-card.revealed {
+    transition: all 0.6s ease;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.contact-form {
+    background: var(--background-light);
+    padding: 60px 0;
+}
+
+.contact-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light-text-color);
+    border-radius: 5px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--button-hover-color);
+}
+
+#form-message {
+    margin-top: 15px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .contact-form-wrapper {
+        padding: 20px;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Values Section */
+.values-section {
+    background-color: var(--background-light);
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.value-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.value-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.value-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.value-card p {
+    color: var(--light-text-color);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .values-grid { grid-template-columns: 1fr; }
 }

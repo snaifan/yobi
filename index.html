@@ -24,6 +24,7 @@
                 <ul class="nav-list">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="offerings.html">Offerings</a></li>
+                       <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="https://yobi.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">Sign up</a></li>
@@ -40,6 +41,13 @@
             <h2>From my fields to your future: sustainable farming and growth.</h2>
             <p>Learn MoneyMaker tomato-growing tips and life lessons from my farm to root your success without burnout.</p>
             <a href="https://yobi.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" class="btn">Get Free Tips</a>
+        </div>
+    </section>
+    <!-- Weather Widget -->
+    <section class="weather-widget section-padding">
+        <div class="container">
+            <h2>Weather at the Farm</h2>
+            <div id="weather-display">Loading weather...</div>
         </div>
     </section>
 <!-- Problem + Solution (Updated: Reclaim Your Calm. Build Your Foundation.) -->
@@ -208,6 +216,26 @@
             </div>
         </div>
     </section>
+    <section class="testimonials section-padding" style="background-image: url('images/farm-background.jpg');">
+    <div class="container">
+        <h2>What People Say</h2>
+        <p class="section-intro">Hear from those who’ve grown with AT Fields.</p>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"The Rooted Growth Blueprint transformed my approach to work-slower, yet more productive!"</p>
+                <span> Erick K., Entrepreneur</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"Brian’s tomato tips doubled my garden yield. Practical and inspiring!"</p>
+                <span> Derrick N., Home Gardener</span>
+            </div>
+            <!--<div class="testimonial-card">
+                <<p>"The trading journal template helped me stay disciplined—thanks to farm wisdom!"</p>
+                <span>- Sarah K., Trader</span>
+            </div>-->
+        </div>
+    </div>
+</section>
 
     <!-- 4. Contact / Work With Me -->
     <section class="contact-work section-padding">
@@ -244,101 +272,150 @@
     <script src="https://unpkg.com/ScrollReveal"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=your-id"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('DOM loaded');
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM loaded');
 
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-
-            // Menu toggle functionality
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navList = document.querySelector('.nav-list');
-            if (menuToggle && navList) {
-                console.log('Menu elements found');
-                menuToggle.addEventListener('click', () => {
-                    navList.classList.toggle('active');
-                    console.log('Toggled menu, active:', navList.classList.contains('active'));
-                });
-                navList.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        navList.classList.remove('active');
-                        console.log('Link clicked, menu closed');
-                    });
-                });
-            } else {
-                console.log('Menu elements not found');
-            }
-
-            // Highlight active navigation link
-            const currentPath = window.location.pathname.split('/').pop();
-            const navLinks = document.querySelectorAll('.nav-list a');
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPath || (currentPath === '' && link.getAttribute('href') === 'index.html')) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
                 }
             });
+        });
 
-            // Dynamic video grid
-            const videos = [
-                { id: 'd5RjxPesLcU', title: 'Tomato Growth Journey', desc: 'Watch my tomato plants thrive and learn patience in growth.' },
-                { id: 'VIDEO_ID_2', title: 'Harvesting Tips', desc: 'Practical techniques from my farm to boost your yield and mindset.' },
-                { id: 'VIDEO_ID_3', title: 'Growth Mindset Lessons', desc: 'Farm-inspired strategies to nurture your personal and professional growth.' }
-            ];
-            const videoGrid = document.querySelector('.video-grid');
-            if (videoGrid) {
-                videos.forEach(video => {
-                    videoGrid.innerHTML += `
-                        <div class="video-card">
-                            <iframe src="https://www.youtube.com/embed/${video.id}" title="${video.title}" frameborder="0" allowfullscreen loading="lazy"></iframe>
-                            <h3>${video.title}</h3>
-                            <p>${video.desc}</p>
-                        </div>
-                    `;
-                });
-            }
-
-            // ScrollReveal Animations
-            ScrollReveal({
-                distance: '60px',
-                duration: 1000,
-                easing: 'cubic-bezier(.215, .61, .355, 1)',
-                interval: 100,
-                reset: false
+        // Menu toggle functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+        if (menuToggle && navList) {
+            console.log('Menu elements found');
+            menuToggle.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                console.log('Toggled menu, active:', navList.classList.contains('active'));
             });
-            ScrollReveal().reveal('.hero-content h1', { origin: 'bottom', delay: 200 });
-            ScrollReveal().reveal('.hero-content h2', { origin: 'bottom', delay: 400 });
-            ScrollReveal().reveal('.hero-content .btn', { origin: 'bottom', delay: 600 });
-            ScrollReveal().reveal('.problem-solution h2, .offerings-preview h2, .testimonials h2, .final-cta p, .page-hero h1, .page-hero p', { origin: 'top', delay: 100 });
-            ScrollReveal().reveal('.problem-text, .solution-text, .product-card, .testimonial-card, .blog-card, .offerings-card, .contact-info, .contact-form-wrapper', { origin: 'bottom', interval: 150 });
-            ScrollReveal().reveal('.about-image', { origin: 'left', delay: 300 });
-            ScrollReveal().reveal('.about-text', { origin: 'right', delay: 400 });
-            ScrollReveal().reveal('.footer-nav, .social-icons, .footer p', { origin: 'bottom', delay: 50, interval: 50 });
-            ScrollReveal().reveal('.thought-image', { delay: 300, duration: 1000, opacity: 0, easing: 'ease-in-out' });
-            ScrollReveal().reveal('.video-card', { delay: 200, duration: 1000, opacity: 0, distance: '20px', origin: 'bottom', interval: 200 });
-            ScrollReveal().reveal('.hero-background-image', { delay: 200, duration: 1000, opacity: 0, easing: 'ease-in-out' });
-            ScrollReveal().reveal('.final-cta h2', { origin: 'top', delay: 100, duration: 1000, opacity: 0 });
-            ScrollReveal().reveal('.final-cta p', { origin: 'top', delay: 200, duration: 1000, opacity: 0 });
-            ScrollReveal().reveal('.cta-buttons', { origin: 'bottom', delay: 300, duration: 1000, opacity: 0 });
-            ScrollReveal().reveal('.cta-image', { origin: 'bottom', delay: 400, duration: 1000, opacity: 0 });
-            ScrollReveal().reveal('.product-card', { origin: 'bottom', delay: 200, duration: 1000, opacity: 0, interval: 200 });
-            ScrollReveal().reveal('.center-btn-wrapper', { origin: 'bottom', delay: 400, duration: 1000, opacity: 0 });
-            ScrollReveal().reveal('.offerings-card', { origin: 'bottom', delay: 200, duration: 1000, opacity: 0, interval: 200 });
-            ScrollReveal().reveal('.tomato-tips h2', { origin: 'top', delay: 100, duration: 1000, opacity: 0 });
-            ScrollReveal().reveal('.tomato-tips .section-intro', { origin: 'top', delay: 200, duration: 1000, opacity: 0 });
-            ScrollReveal().reveal('.tip-card', { origin: 'bottom', delay: 300, duration: 1000, opacity: 0, interval: 200 });
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                    console.log('Link clicked, menu closed');
+                });
+            });
+        } else {
+            console.log('Menu elements not found');
+        }
 
+        // Highlight active navigation link
+        const currentPath = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.nav-list a');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath || (currentPath === '' && link.getAttribute('href') === 'index.html')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Popup CTA
+function showPopup() {
+    const popup = document.getElementById('cta-popup');
+    const dontShowAgain = localStorage.getItem('hidePopup');
+    if (!dontShowAgain) {
+        setTimeout(() => {
+            popup.style.display = 'flex';
+        }, 5000); // 5-second delay (adjust to 10000 for 10s if preferred)
+    }
+}
+document.querySelector('.close-btn').addEventListener('click', () => {
+    document.getElementById('cta-popup').style.display = 'none';
+    if (document.getElementById('dontShowAgain').checked) {
+        localStorage.setItem('hidePopup', 'true');
+    }
+});
+document.getElementById('dontShowAgain').addEventListener('change', (e) => {
+    if (e.target.checked) {
+        localStorage.setItem('hidePopup', 'true');
+    } else {
+        localStorage.removeItem('hidePopup');
+    }
+});
+showPopup();
+        // Weather Widget
+        async function fetchWeather() {
+            const apiKey = '038c6dd4adf0cbe6b615d5538c3a0841'; // Paste your key here
+            const city = 'Kisumu,KE'; // Update with your location
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                const weatherDisplay = document.getElementById('weather-display');
+                if (data.cod === 200) {
+                    weatherDisplay.innerHTML = `${data.main.temp}°C, ${data.weather[0].description} in ${city} <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png" alt="Weather icon" style="width: 32px;">`;
+                } else {
+                    weatherDisplay.textContent = 'Weather data unavailable.';
+                }
+            } catch (error) {
+                console.error('Weather fetch failed:', error);
+                document.getElementById('weather-display').textContent = 'Weather data unavailable.';
+            }
+        }
+        fetchWeather();
+
+        // Dynamic video grid
+        const videos = [
+            { id: 'd5RjxPesLcU', title: 'Tomato Growth Journey', desc: 'Watch my tomato plants thrive and learn patience in growth.' },
+            { id: 'VIDEO_ID_2', title: 'Harvesting Tips', desc: 'Practical techniques from my farm to boost your yield and mindset.' },
+            { id: 'VIDEO_ID_3', title: 'Growth Mindset Lessons', desc: 'Farm-inspired strategies to nurture your personal and professional growth.' }
+        ];
+        const videoGrid = document.querySelector('.video-grid');
+        if (videoGrid) {
+            videos.forEach(video => {
+                videoGrid.innerHTML += `
+                    <div class="video-card">
+                        <iframe src="https://www.youtube.com/embed/${video.id}" title="${video.title}" frameborder="0" allowfullscreen loading="lazy"></iframe>
+                        <h3>${video.title}</h3>
+                        <p>${video.desc}</p>
+                    </div>
+                `;
+            });
+        }
+
+        // ScrollReveal Animations
+        ScrollReveal({
+            distance: '60px',
+            duration: 1000,
+            easing: 'cubic-bezier(.215, .61, .355, 1)',
+            interval: 100,
+            reset: false
+        });
+        ScrollReveal().reveal('.hero-content h1', { origin: 'bottom', delay: 200 });
+        ScrollReveal().reveal('.hero-content h2', { origin: 'bottom', delay: 400 });
+        ScrollReveal().reveal('.hero-content .btn', { origin: 'bottom', delay: 600 });
+        ScrollReveal().reveal('.problem-solution h2, .offerings-preview h2, .testimonials h2, .final-cta p, .page-hero h1, .page-hero p', { origin: 'top', delay: 100 });
+        ScrollReveal().reveal('.problem-text, .solution-text, .product-card, .testimonial-card, .blog-card, .offerings-card, .contact-info, .contact-form-wrapper', { origin: 'bottom', interval: 150 });
+        ScrollReveal().reveal('.about-image', { origin: 'left', delay: 300 });
+        ScrollReveal().reveal('.about-text', { origin: 'right', delay: 400 });
+        ScrollReveal().reveal('.footer-nav, .social-icons, .footer p', { origin: 'bottom', delay: 50, interval: 50 });
+        ScrollReveal().reveal('.thought-image', { delay: 300, duration: 1000, opacity: 0, easing: 'ease-in-out' });
+        ScrollReveal().reveal('.video-card', { delay: 200, duration: 1000, opacity: 0, distance: '20px', origin: 'bottom', interval: 200 });
+        ScrollReveal().reveal('.hero-background-image', { delay: 200, duration: 1000, opacity: 0, easing: 'ease-in-out' });
+        ScrollReveal().reveal('.final-cta h2', { origin: 'top', delay: 100, duration: 1000, opacity: 0 });
+        ScrollReveal().reveal('.final-cta p', { origin: 'top', delay: 200, duration: 1000, opacity: 0 });
+        ScrollReveal().reveal('.cta-buttons', { origin: 'bottom', delay: 300, duration: 1000, opacity: 0 });
+        ScrollReveal().reveal('.cta-image', { origin: 'bottom', delay: 400, duration: 1000, opacity: 0 });
+        ScrollReveal().reveal('.product-card', { origin: 'bottom', delay: 200, duration: 1000, opacity: 0, interval: 200 });
+        ScrollReveal().reveal('.center-btn-wrapper', { origin: 'bottom', delay: 400, duration: 1000, opacity: 0 });
+        ScrollReveal().reveal('.offerings-card', { origin: 'bottom', delay: 200, duration: 1000, opacity: 0, interval: 200 });
+        ScrollReveal().reveal('.tomato-tips h2', { origin: 'top', delay: 100, duration: 1000, opacity: 0 });
+        ScrollReveal().reveal('.tomato-tips .section-intro', { origin: 'top', delay: 200, duration: 1000, opacity: 0 });
+        ScrollReveal().reveal('.tip-card', { origin: 'bottom', delay: 300, duration: 1000, opacity: 0, interval: 200 });
+        ScrollReveal({ distance: '50px', duration: 1200, easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)', /* Smoother easing */ interval: 250, reset: false });
+        ScrollReveal().reveal('.testimonials h2', { origin: 'top', delay: 150, opacity: 0 });
+        ScrollReveal().reveal('.section-intro', { origin: 'top', delay: 250, opacity: 0 });
+        ScrollReveal().reveal('.testimonial-card', { origin: 'bottom', delay: 350, interval: 250, opacity: 0,scale: 0.95, afterReveal: el => el.classList.add('revealed') });
+        
             // Contact form submission
             const form = document.getElementById('subscribe-form');
             const message = document.getElementById('form-message');
@@ -403,7 +480,7 @@
             }
 
             const posts = [
-                { title: 'Why Small Beginnings Matter', date: 'June 15, 2025', tags: 'Starting Small', excerpt: 'Every great story...', img: 'images/Small-beginnings.jpg', url: 'posts/why-small-beginnings-matter.html' }
+                { title: 'Why Small Beginnings Matter', date: 'June 15, 2025', tags: 'Starting Small', excerpt: 'Every great story...', img: 'images/small-beginnings.jpg', url: 'posts/why-small-beginnings-matter.html' }
             ];
             const blogGrid = document.querySelector('.blog-grid');
             if (blogGrid) {
@@ -436,5 +513,16 @@
             gtag('config', 'your-id');
         });
     </script>
+<div id="cta-popup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h3>Get Your Free Guide!</h3>
+        <p>Download 'The Rooted Growth Blueprint' to start your journey to sustainable success.</p>
+        <a href="https://yobi.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" class="btn cta-btn">Subscribe Now</a>
+        <label class="dont-show-label">
+            <input type="checkbox" id="dontShowAgain"> Don’t show this again
+        </label>
+    </div>
+</div>
 </body>
 </html>
