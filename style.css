@@ -520,7 +520,9 @@ a:hover {
 .contact-form .btn {
     margin-top: 16px;
 }
-
+.contact-work{
+    text-align: center;
+}
 /* Offerings Section */
 .offerings-full {
     background-color: var(--background-light);
@@ -1103,6 +1105,7 @@ a:hover {
 .weather-widget {
     background: var(--background-dark);
     padding: 20px 0;
+    text-align: center;
 }
 
 #weather-display {
@@ -1122,6 +1125,7 @@ a:hover {
     position: relative;
     overflow: hidden;
     color: #fff;
+    text-align: center;
 }
 
 .testimonials::before {
