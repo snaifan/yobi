@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how Brian Eboso’s MoneyMaker tomato farming journey mirrors disciplined trading.">
+    <title>Lessons from My Tomato Farm | AT Fields</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">AT Fields</a>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../offerings.html">Offerings</a></li>
+                    <li><a href="../blog.html" class="active">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="https://t.me/tradewithebosobrian" target="_blank" rel="noopener noreferrer">Join Telegram</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="blog-single">
+        <div class="container blog-content-area">
+            <h1>Lessons from My Tomato Farm</h1>
+            <p class="blog-meta">By Brian Eboso | October 10, 2025 | Farming, Mindset</p>
+            <img src="../images/tomato-growth.jpg" alt="MoneyMaker tomato plants in a sack" class="blog-feature-image" loading="lazy">
+            <p>Growing tomatoes taught me patience and resilience - qualities that translate directly to breakout trading. Watch my journey below and see how nurturing a crop mirrors nurturing a portfolio.</p>
+            <iframe src="https://www.youtube.com/embed/d5RjxPesLcU" title="Tomato progress after four weeks: 4 plants in a sack" frameborder="0" allowfullscreen loading="lazy"></iframe>
+            <h3>Key Lessons</h3>
+            <ul>
+                <li><strong>Patience Pays Off</strong>: Like waiting for tomatoes to ripen, successful trades require timing.</li>
+                <li><strong>Adapt to Conditions</strong>: Adjust to market or weather changes with a clear plan.</li>
+                <li><strong>Small Steps Win</strong>: Consistent care (or trades) leads to big results.</li>
+            </ul>
+            <a href="../blog.html" class="back-to-blog-btn btn btn-secondary">Back to Blog</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="../offerings.html">Offerings</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms-of-service.html">Terms of Service</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://x.com/BrianAtsinwa" aria-label="X"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/share/19kREnFfyU/" aria-label="Follow AT Fields on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://youtube.com/@ATFields" aria-label="Subscribe to AT Fields on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://t.me/tradewithebosobrian" aria-label="Join AT Fields on Telegram"><i class="fa-brands fa-telegram"></i></a>
+            </div>
+            <p>&copy; 2025 AT Fields. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/ScrollReveal"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        ScrollReveal({
+            distance: '40px',
+            duration: 800,
+            easing: 'cubic-bezier(.215, .61, .355, 1)',
+            interval: 100,
+            reset: false
+        });
+        ScrollReveal().reveal('.blog-content-area h1', { origin: 'top', delay: 200 });
+        ScrollReveal().reveal('.blog-content-area .blog-meta', { origin: 'top', delay: 400 });
+        ScrollReveal().reveal('.blog-feature-image', { origin: 'bottom', delay: 600 });
+        ScrollReveal().reveal('.blog-content-area p, .blog-content-area ul, .blog-content-area iframe', { origin: 'bottom', interval: 150 });
+        ScrollReveal().reveal('.btn', { origin: 'bottom', delay: 800 });
+    });
+    </script>
+</body>
+</html>
