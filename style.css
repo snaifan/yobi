@@ -5,6 +5,26 @@
     padding: 0;
 }
 
+/* =========================
+   GLOBAL COLOR VARIABLES
+========================= */
+:root {
+  /* 🌿 Brand Greens */
+  --green-dark: #12372A;
+  --green-main: #436850;
+  --green-light: #ADBC9F;
+  --cream-bg: #FBFADA;
+
+  /* 🩶 Neutral Shades */
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --gray-light: #e5e5e5;
+
+  /* 🟥 Accent / Highlights */
+  --accent-red: #C44536;
+  --accent-yellow: #E9C46A;
+}
+
 :root {
     --primary-color: #2E4A3F; /* Deep forest green (unchanged) */
     --secondary-color: #F5F0E7; /* Warmer off-white beige for variety */
@@ -24,12 +44,12 @@
 
 body {
     font-family: var(--font-sans);
-    color: var(--text-color);
     line-height: 1.6;
-    background-color: var(--background-light);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--cream-bg);
+    color: var(--text-dark);
 }
 
 /* Typography */
@@ -72,7 +92,12 @@ a:hover {
     min-height: 300px;
     overflow: hidden;
 }
-
+.card {
+  background-color: var(--green-light);
+  color: var(--text-dark);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -676,11 +701,11 @@ a:hover {
 }
 
 /* Footer */
-.footer {
-    background-color: var(--primary-color);
-    color: #fff;
-    padding: 32px 12px;
-    text-align: center;
+.header, .footer {
+  background-color: var(--green-dark);
+  color: var(--text-light);
+  padding: 32px 12px;
+  text-align: center;
 }
 
 .footer-nav {
@@ -1846,4 +1871,8 @@ a:hover {
     .contact-form-wrapper {
         padding: 16px;
     }
+}
+.section-highlight {
+  background-color: var(--accent-yellow);
+  color: var(--text-dark);
 }
