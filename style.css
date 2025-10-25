@@ -563,7 +563,7 @@ a:hover {
     margin: 0 auto;
 }
 
-.offerings-card {
+.offerings-card{
     background-color: #fff;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-light);
@@ -572,6 +572,128 @@ a:hover {
     min-height: 300px;
     overflow: hidden;
 }
+
+.offerings-card .system-intro,
+.offerings-card .recent-results,
+.offerings-card .key-info {
+    background: rgba(33, 150, 243, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.offerings-card .recent-results p:last-child,
+.offerings-card .key-info p:last-child {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9rem;
+    color: #B0B0B0;
+}
+
+.offerings-card .highlight {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.offerings-card .section-title {
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+    color: #2196F3;
+}
+
+.offerings-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.offerings-card ul li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.offerings-card ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.offerings-card .trial-info {
+    background: rgba(76, 175, 80, 0.1);
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.offerings-card .trial-info strong {
+    color: #4CAF50;
+}
+
+.offerings-card .card-actions {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.offerings-card .pricing-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.offerings-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+.offerings-card .price .period {
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: 400;
+}
+
+.offerings-card .price-note {
+    font-size: 0.85rem;
+    color: #B0B0B0;
+    margin-top: 0.25rem;
+}
+
+.offerings-card .badge {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.offerings-card .trial {
+    font-size: 0.9rem;
+    color: #2196F3;
+    font-weight: 600;
+}
+
+.offerings-card .cta-subtext {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #888;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.offerings-card .btn-primary {
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
 
 .offerings-card:hover {
     transform: translateY(-4px);
