@@ -366,11 +366,11 @@ img{margin-bottom:1rem;display:block}
 }
 
 /* ============================================= */
-/*  LEFT-ALIGN EVERYTHING – clean & consistent  */
-/*  Paste at end of styles.css                  */
+/*  VERTICAL CENTER – align-items: center       */
+/*  Safe to add – only targets flex/grid parents */
 /* ============================================= */
 
-/* Reset any centering */
+/* Flex containers */
 .header-content,
 .hero,
 .hero-content,
@@ -393,10 +393,10 @@ img{margin-bottom:1rem;display:block}
 .newsletter-form,
 .form-group,
 .btn {
-  align-items: flex-start !important;
+  align-items: center !important;
 }
 
-/* Grid containers – left-align content */
+/* Grid containers – center children vertically */
 .testimonial-grid,
 .product-grid,
 .offerings-grid,
@@ -404,40 +404,24 @@ img{margin-bottom:1rem;display:block}
 .tips-grid,
 .blog-grid,
 .video-grid {
-  align-content: start !important;
-  justify-items: start !important;
+  align-content: center !important;
 }
 
-/* Text alignment – left everywhere */
+/* Special: Hero text stack */
 .hero h1,
 .hero h2,
 .hero p,
 .hero .social-proof,
-.hero .urgency,
-.blog-single h1,
-.blog-single h2,
-.blog-single p,
-.testimonial-card p,
-.product-card p,
-.value-card p,
-.section-intro {
-  text-align: left !important;
+.hero .urgency {
+  text-align: center;
 }
 
-/* Buttons & links – left-aligned in flex parents */
-.btn,
-a {
-  margin-right: auto !important;
-}
-
-/* Mobile – keep left-aligned */
+/* Mobile fallback – keep tight */
 @media (max-width: 768px) {
   .header-content,
   .hero,
-  .hero-content,
-  .testimonial-grid,
-  .product-grid {
-    align-items: flex-start !important;
+  .hero-content {
+    align-items: flex-start !important; /* prevents stretching on small screens */
   }
 }
 /* -------------------------------------------------
