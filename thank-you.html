@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AT Fields Blog: Expert breakout trading insights and discipline from Brian Eboso. Get One More Season free.">
-    <meta name="keywords" content="breakout trading, swing trading, trading psychology, AT Fields">
-    <title>AT Fields | Blog</title>
+    <title>Thank You! | AT Fields</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +23,7 @@
                 <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="offerings.html">Offerings</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="https://t.me/tradewithebosobrian" target="_blank" rel="noopener noreferrer">Join Telegram</a></li>
@@ -34,52 +32,31 @@
         </div>
     </header>
 
-    <!-- Page Hero -->
+    <!-- Thank You Content -->
     <section class="page-hero">
         <div class="container">
-            <h1>Trading & Growth Insights</h1>
-            <p>Master weekly structure and disciplined trading from Brian's journey.</p>
-            <a href="https://yobi.beehiiv.com/subscribe" class="btn btn-primary">Get “One More Season” Free</a>
-            <p class="social-proof">Trusted by traders across Africa and beyond 🌍</p>
+            <h1>Thanks for Signing Up!</h1>
+            <p>Check your email for “One More Season” – your guide to trading discipline.</p>
+            <p>As a bonus, watch this quick video on EUR/USD setups:</p>
         </div>
     </section>
-
-    <!-- Blog Posts -->
-    <section class="blog-posts section-padding">
+    <section class="section-padding">
         <div class="container">
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <img src="images/trading-chart.jpg" alt="Trading chart with breakout pattern" loading="lazy">
-                    <div class="card-content">
-                        <h3>How to Trade EUR/USD with Just 3 Levels Per Week</h3>
-                        <p class="post-meta">By Brian Eboso | October 28, 2025 | Trading, Breakouts</p>
-                        <p>What if I told you that you only need to mark 3 lines on your chart once per week to trade profitably?</p>
-                        <a href="posts/how-to-trade-EURUSD-with-just-3-levels-per-week.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <img src="images/risk-management.jpg" alt="Risk management dashboard" loading="lazy">
-                    <div class="card-content">
-                        <h3>Protect Your Capital: Risk Management 101</h3>
-                        <p class="post-meta">By Brian Eboso | October 15, 2025 | Trading, Risk Management</p>
-                        <p>You can have the best trading strategy in the world, but without proper risk management, you'll still blow your account.</p>
-                        <a href="posts/risk-management-101.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <img src="images/tomato-growth.jpg" alt="Trading setup example" loading="lazy">
-                    <div class="card-content">
-                        <h3>What Growing Tomatoes Taught Me About Trading</h3>
-                        <p class="post-meta">By Brian Eboso | October 10, 2025 | Trading, Mindset</p>
-                        <p>I never thought growing tomatoes would fix my trading. But it did.</p>
-                        <a href="posts/tomato-farm-lessons.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+            <div class="video-grid">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/d5RjxPesLcU" 
+                            title="Bonus Video" 
+                            frameborder="0" 
+                            allowfullscreen
+                            loading="lazy"></iframe>
+                </div>
             </div>
+            <h2>Ready for Real Wins?</h2>
+            <p>Join the Private Group with your 7-day free trial – real-time alerts await!</p>
             <div class="center-btn-wrapper">
-                <a href="https://yobi.beehiiv.com/subscribe" class="btn btn-primary">Get “One More Season” Free</a>
-                <a href="https://t.me/tradewithebosobrian" class="btn btn-secondary">Join Telegram for Daily Insights</a>
+                <a href="offerings.html#playbook?utm_source=thankyou&utm_medium=cta" class="btn btn-primary">Start Free Trial →</a>
             </div>
+            <p>Questions? Join Telegram: <a href="https://t.me/tradewithebosobrian?utm_source=thankyou&utm_medium=link">Here</a></p>
         </div>
     </section>
 
@@ -102,19 +79,6 @@
             <p>&copy; 2025 AT Fields. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <!-- Popup -->
-    <div id="cta-popup" class="popup" style="display: none;">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h3>Don’t Just Trade - Grow.</h3>
-            <p>Get <em>One More Season</em> free and learn how I turned setbacks into trading wins. Join disciplined traders building calm profits.</p>
-            <a href="https://yobi.beehiiv.com/subscribe" class="btn btn-primary">Claim Free Guide</a>
-            <label class="dont-show-label">
-                <input type="checkbox" id="dontShowAgain"> Don’t show again
-            </label>
-        </div>
-    </div>
 
     <!-- Inline Script -->
     <script src="https://unpkg.com/ScrollReveal"></script>
@@ -163,35 +127,6 @@
             }
         });
 
-        // Popup
-        function showPopup() {
-            const popup = document.getElementById('cta-popup');
-            const dontShowAgain = localStorage.getItem('hidePopup');
-            if (!dontShowAgain && popup) {
-                setTimeout(() => {
-                    popup.style.display = 'flex';
-                }, 2000);
-            }
-        }
-        const closeBtn = document.querySelector('.close-btn');
-        const dontShowAgainCheckbox = document.getElementById('dontShowAgain');
-        if (closeBtn && dontShowAgainCheckbox) {
-            closeBtn.addEventListener('click', () => {
-                document.getElementById('cta-popup').style.display = 'none';
-                if (dontShowAgainCheckbox.checked) {
-                    localStorage.setItem('hidePopup', 'true');
-                }
-            });
-            dontShowAgainCheckbox.addEventListener('change', (e) => {
-                if (e.target.checked) {
-                    localStorage.setItem('hidePopup', 'true');
-                } else {
-                    localStorage.removeItem('hidePopup');
-                }
-            });
-            showPopup();
-        }
-
         // ScrollReveal
         ScrollReveal({
             distance: '40px',
@@ -202,18 +137,12 @@
         });
         ScrollReveal().reveal('.page-hero h1', { origin: 'top', delay: 200 });
         ScrollReveal().reveal('.page-hero p', { origin: 'top', delay: 400 });
-        ScrollReveal().reveal('.page-hero .btn', { origin: 'bottom', delay: 600 });
-        ScrollReveal().reveal('.page-hero .social-proof', { origin: 'bottom', delay: 800 });
-        ScrollReveal().reveal('.blog-posts h2', { origin: 'top', delay: 100 });
-        ScrollReveal().reveal('.blog-card', { origin: 'bottom', interval: 150 });
+        ScrollReveal().reveal('.video-card', { origin: 'bottom', delay: 300 });
         ScrollReveal().reveal('.center-btn-wrapper', { origin: 'bottom', delay: 400 });
 
         // Analytics
-        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+        document.querySelectorAll('.btn-primary').forEach(btn => {
             btn.addEventListener('click', () => console.log(`CTA clicked: ${btn.textContent}`));
-        });
-        document.querySelectorAll('.read-more').forEach(link => {
-            link.addEventListener('click', () => console.log(`Read More clicked: ${link.getAttribute('href')}`));
         });
         document.querySelectorAll('.social-icons a').forEach(icon => {
             icon.addEventListener('click', () => console.log(`Social icon clicked: ${icon.getAttribute('aria-label')}`));

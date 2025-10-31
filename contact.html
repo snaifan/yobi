@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Brian Eboso at AT Fields for breakout trading strategies, farming tips, or collaborations. Join 1,000+ traders today.">
-    <meta name="keywords" content="contact, AT Fields, breakout trading, swing trading, farming, Brian Eboso">
+    <meta name="description" content="Contact AT Fields: Get in touch with Brian Eboso for trading advice or questions.">
+    <meta name="keywords" content="breakout trading, swing trading, trading psychology, AT Fields">
     <title>AT Fields | Contact</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
@@ -37,8 +37,8 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <h1>Contact Brian Eboso</h1>
-            <p>Reach out for breakout trading insights, farming tips, or collaborations. Let’s grow your skills and wealth together.</p>
+            <h1>Contact AT Fields</h1>
+            <p>Get in touch for trading advice or questions. We're here to help.</p>
             <a href="https://yobi.beehiiv.com/subscribe" class="btn btn-primary">Get “One More Season” Free</a>
             <p class="social-proof">Trusted by traders across Africa and beyond 🌍</p>
         </div>
@@ -47,28 +47,34 @@
     <!-- Contact Form -->
     <section class="contact-form section-padding">
         <div class="container">
-            <h2>Get in Touch</h2>
-            <p class="section-intro">Have questions about breakout trading, growing  tomatoes, or joining my community? Drop me a message below or join my Telegram for daily insights.</p>
-            <div class="contact-form-wrapper">
-                <form id="contact-form" action="https://formspree.io/f/mjkwgolw" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your name" aria-label="Your name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="Your email" aria-label="Your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required placeholder="Your message" aria-label="Your message" rows="5"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-                <div id="form-message" style="display: none;"></div>
-            </div>
+            <h2>Send a Message</h2>
+            <p class="section-intro">Questions about weekly structure or our private group? Reach out.</p>
+            <form id="contact-form" class="contact-form-wrapper">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <p id="form-message"></p>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact-work section-padding">
+        <div class="container">
+            <h2>Other Ways to Connect</h2>
+            <p class="section-intro">Join our community for real-time trading insights.</p>
             <div class="center-btn-wrapper">
-                <a href="https://t.me/tradewithebosobrian" class="btn btn-secondary">Join Telegram for Daily Insights</a>
+                <a href="https://t.me/tradewithebosobrian" class="btn btn-secondary">Join Telegram</a>
             </div>
         </div>
     </section>
@@ -86,7 +92,6 @@
             </div>
             <div class="social-icons">
                 <a href="https://x.com/BrianAtsinwa" aria-label="X"><i class="fa-brands fa-twitter"></i></a>
-               <!-- <a href="https://www.facebook.com/share/19kREnFfyU/" aria-label="Follow AT Fields on Facebook"><i class="fa-brands fa-facebook-f"></i></a>-->
                 <a href="https://youtube.com/@ATFields" aria-label="Subscribe to AT Fields on YouTube"><i class="fa-brands fa-youtube"></i></a>
                 <a href="https://t.me/tradewithebosobrian" aria-label="Join AT Fields on Telegram"><i class="fa-brands fa-telegram"></i></a>
             </div>
@@ -94,26 +99,11 @@
         </div>
     </footer>
 
-    <!-- Popup -->
-    <div id="cta-popup" class="popup" style="display: none;">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h3>Don’t Just Trade - Grow.</h3>
-            <p>Get <em>One More Season</em> free and learn how I turned setbacks into trading wins. Join disciplined traders building calm profits.</p>
-            <a href="https://yobi.beehiiv.com/subscribe" class="btn btn-primary">Claim Free Guide</a>
-            <label class="dont-show-label">
-                <input type="checkbox" id="dontShowAgain"> Don’t show again
-            </label>
-        </div>
-    </div>
-
     <!-- Inline Script -->
     <script src="https://unpkg.com/ScrollReveal"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=your-id"></script>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        console.log('DOM loaded');
-
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -131,15 +121,19 @@
         const menuToggle = document.querySelector('.menu-toggle');
         const navList = document.querySelector('.nav-list');
         if (menuToggle && navList) {
-            menuToggle.addEventListener('click', () => {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
                 navList.classList.toggle('active');
-                console.log('Toggled menu, active:', navList.classList.contains('active'));
             });
             navList.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     navList.classList.remove('active');
-                    console.log('Link clicked, menu closed');
                 });
+            });
+            document.addEventListener('click', (e) => {
+                if (!navList.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navList.classList.remove('active');
+                }
             });
         }
 
@@ -149,8 +143,6 @@
         navLinks.forEach(link => {
             if (link.getAttribute('href') === currentPath || (currentPath === '' && link.getAttribute('href') === 'index.html')) {
                 link.classList.add('active');
-            } else {
-                link.classList.remove('active');
             }
         });
 
@@ -183,34 +175,15 @@
             showPopup();
         }
 
-        // Contact Form Submission
-        const form = document.getElementById('contact-form');
-        const message = document.getElementById('form-message');
-        if (form && message) {
-            form.addEventListener('submit', (e) => {
+        // Contact Form Submission (Static Example - Replace with your backend if needed)
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const data = new FormData(form);
-                fetch(form.action, {
-                    method: 'POST',
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                }).then(response => {
-                    if (response.ok) {
-                        message.style.display = 'block';
-                        message.textContent = 'Thank you! I’ll get back to you soon.';
-                        message.style.color = 'green';
-                        form.reset();
-                    } else {
-                        message.style.display = 'block';
-                        message.textContent = 'Oops! Something went wrong. Please try again.';
-                        message.style.color = 'red';
-                    }
-                }).catch(error => {
-                    message.style.display = 'block';
-                    message.textContent = 'Error: Please try again later.';
-                    message.style.color = 'red';
-                    console.error('Fetch error:', error);
-                });
+                const formMessage = document.getElementById('form-message');
+                formMessage.textContent = 'Message sent successfully!';
+                formMessage.style.color = 'green';
+                contactForm.reset();
             });
         }
 
@@ -229,7 +202,9 @@
         ScrollReveal().reveal('.contact-form h2', { origin: 'top', delay: 100 });
         ScrollReveal().reveal('.contact-form .section-intro', { origin: 'top', delay: 200 });
         ScrollReveal().reveal('.contact-form-wrapper', { origin: 'bottom', delay: 300 });
-        ScrollReveal().reveal('.center-btn-wrapper', { origin: 'bottom', delay: 400 });
+        ScrollReveal().reveal('.contact-work h2', { origin: 'top', delay: 100 });
+        ScrollReveal().reveal('.contact-work .section-intro', { origin: 'top', delay: 200 });
+        ScrollReveal().reveal('.center-btn-wrapper', { origin: 'bottom', delay: 300 });
 
         // Analytics
         document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
@@ -238,12 +213,6 @@
         document.querySelectorAll('.social-icons a').forEach(icon => {
             icon.addEventListener('click', () => console.log(`Social icon clicked: ${icon.getAttribute('aria-label')}`));
         });
-
-        // Dynamic Footer Year
-        const footerText = document.querySelector('.footer p');
-        if (footerText) {
-            footerText.innerHTML = `&copy; ${new Date().getFullYear()} AT Fields. All Rights Reserved.`;
-        }
 
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
