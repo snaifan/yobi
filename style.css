@@ -161,6 +161,7 @@ a:hover{color:var(--accent-red-hover);transform:translateY(-1px)}
 .section-intro{
   background:rgba(30,60,40,.6);color:var(--text-light);padding:12px 20px;
   border-radius:8px;font-style:italic;max-width:700px;margin:0 auto 40px;
+  text-align: center;
 }
 .testimonials{
   background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
@@ -391,8 +392,11 @@ img{margin-bottom:1rem;display:block}
 .popup,
 .popup-content,
 .newsletter-form,
+.page-hero,
+.section-padding,
 .form-group,
 .btn {
+  text-align: center;
   align-items: center !important;
 }
 
